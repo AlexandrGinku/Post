@@ -2,11 +2,11 @@ package ru.netelogy.data
 
 data class Post(
     val id: Int,
-//    val ownerId: Int,
+    val ownerId: Int,
+    val date: String,
+    val text: String,
 //    val fromId: Int,
 //    val createdBy: Int,
-//    val date: Int,
-    val text: String,
 //    val replyOwnerId: Int,
 //    val replyPostId: Int,
 //    val friendsOnly: Boolean,

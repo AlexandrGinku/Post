@@ -12,23 +12,21 @@ internal class WallServiceTest {
     @Test
     fun add_new_post() {
         // arrange
-        val postNew = Post(0,"Test Add New Post")
-        val expectedPostId = 1
+        val postNew = Post(0,1,"22.01.2022","Test Add New Post")
+        val expectedPost = Post(1,1,"22.01.2022","Test Add New Post")
         // act
-        val actualPostId = add(postNew)
-        val (postId, _) = actualPostId
+        val actualPost = add(postNew)
         // assert
-        assertEquals(expectedPostId,postId)
+        assertEquals(expectedPost,actualPost)
     }
 
     @Test
     fun update_correct() {
         // arrange
-        val postNew = Post(0,"Test Add New Post")
-        val postNewUpdate = Post(1,"Test Update Post")
+        val postNew = Post(0,1, "22.01.2022", "Test Add New Post")
+        val postNewUpdate = Post(1,1, "22.01.2022","Test Update Post")
         val expectedUpdate = true
         // act
-        val actualPost = add(postNew)
         val postUpdate = update(postNewUpdate)
         // assert
         assertEquals(expectedUpdate,postUpdate)
@@ -37,13 +35,14 @@ internal class WallServiceTest {
     @Test
     fun update_incorrect() {
         // arrange
-        val postNew = Post(0,"Test Add New Post")
-        val postNewUpdate = Post(2,"Test Update Post")
+        val postNew = Post(1,1, "22.01.2022","Test Add New Post")
+        val postNewUpdate = Post(2,1, "22.01.2022","Test Update Post")
         val expectedUpdate = false
         // act
-        val actualPost = add(postNew)
         val postUpdate = update(postNewUpdate)
         // assert
         assertEquals(expectedUpdate,postUpdate)
     }
+
+
 }
